@@ -41,7 +41,6 @@ Ensure you have the following dependencies installed:
 1. Run the graphical user interface (GUI) using **`GUI.py`**:
     
     ```bash
-    bashCopy code
     python GUI.py
     
     ```
