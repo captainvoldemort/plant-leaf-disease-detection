@@ -51,6 +51,63 @@ Ensure you have the following dependencies installed:
 
 The model is based on the VGG16 architecture with custom classification layers. It is trained to classify images into four classes: Scab, Rot, Rust, and Healthy.
 
+---
+
+# About Model Training
+
+This code is a Python script for performing transfer learning using the VGG16 architecture with the Keras deep learning library. Transfer learning involves using a pre-trained neural network model on a new task by fine-tuning it for a specific problem.
+
+## **Libraries and Imports**
+
+The code begins by importing necessary libraries and modules:
+
+- **`os`**: The Python **`os`** module for operating system-related functionalities.
+- **`ImageDataGenerator`**: A class from Keras used for data augmentation and preprocessing of image data.
+- **`VGG16`**: A pre-trained deep neural network architecture.
+- **`Dense`** and **`Flatten`**: Layers from Keras used to customize the network.
+- **`Model`**: The Keras class for defining a neural network model.
+
+## **Configuration and Data Paths**
+
+Several configuration parameters and file paths are defined:
+
+- **`num_classes`**: The number of output classes in the target problem (needs to be replaced with the actual number).
+- **`train_data_dir`**: The path to the training data folder.
+- **`test_data_dir`**: The path to the test data folder.
+- **`validation_data_dir`**: The path to the validation data folder.
+- **`save_path`**: The path where the trained VGG16 model will be saved.
+
+## **Data Generators**
+
+ImageDataGenerators are set up for training, validation, and testing data. These generators are responsible for loading and preprocessing image data, such as rescaling pixel values to a range between 0 and 1.
+
+## **Model Definition**
+
+The VGG16 model is loaded with pre-trained weights using **`VGG16(weights='imagenet', include_top=False, input_shape=(224, 224, 3))`**. Then, custom classification layers are added on top of the VGG16 base model:
+
+- The output from the VGG16 base is flattened.
+- A fully connected layer with 256 neurons and ReLU activation is added.
+- The final output layer with a softmax activation function is defined with **`num_classes`** neurons.
+
+## **Model Compilation**
+
+The model is compiled with the following settings:
+
+- Optimizer: 'adam'
+- Loss function: 'categorical_crossentropy' (suitable for multi-class classification)
+- Metrics to monitor during training: 'accuracy'
+
+## **Model Training**
+
+The model is trained using the training and validation data generators. It is trained for a specified number of epochs (in this case, 10).
+
+## **Model Evaluation**
+
+The trained model is evaluated on the test data using the **`model.evaluate()`** function. This provides information about the model's performance on unseen data.
+
+## **Model Saving**
+
+Finally, the trained model is saved to the specified **`save_path`**.
 ## **Project Structure**
 
 - **`GUI.py`**: The graphical user interface for testing the model.
