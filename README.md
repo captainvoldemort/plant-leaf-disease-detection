@@ -59,22 +59,16 @@ The model is based on the VGG16 architecture with custom classification layers. 
 
 ## **Dataset**
 
-The model is trained on the Plant Village dataset, which contains images of apple plant leaves with various diseases.
+The model is trained on the Plant Village dataset, which contains images of apple plant leaves with various diseases. In our project we have limited our study to four apple leaf classes. That are 'Scab','Rot','Rust' and 'Healthy'.
 
-## Trained Models
-
-In addition to the VGG16 model, we provide trained models using other architectures for your convenience:
-
-- **VGG16 Model**: This is the default model trained for plant leaf disease detection.
-- **ResNet50 Model**: A model based on the ResNet50 architecture.
-- **InceptionV3 Model**: A model based on the InceptionV3 architecture.
+## Using Pretrained Models
 
 You can choose the model that best suits your needs for disease classification. To use a different model, simply replace the model file in the GUI or use the respective model file when deploying this project for your own applications.
 
 To specify the model when running the GUI or conducting batch predictions, update the `load_model` function call in `GUI.py` with the desired model file:
 
 ```python
-# Load the desired model
+# Load the desired model - NOT PROVIDED 
 # For VGG16 model:
 model = load_model('Trained_Model_vgg16.h5')
 # For ResNet50 model:
