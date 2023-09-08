@@ -20,8 +20,7 @@ Ensure you have the following dependencies installed:
 
 1. Organize your dataset into three folders: training, validation, and testing, and update the paths in **`Train.py`** accordingly:
     
-    ```python
-    pythonCopy code
+    ```
     train_data_dir = 'Path_to_train_folder'
     validation_data_dir = 'Path_to_validation_folder'
     test_data_dir = 'Path_to_test_folder'
@@ -31,7 +30,6 @@ Ensure you have the following dependencies installed:
 2. Run the training script:
     
     ```bash
-    bashCopy code
     python Train.py
     
     ```
